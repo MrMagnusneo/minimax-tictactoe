@@ -97,6 +97,3 @@ Current board:
 ...
 Computer wins!
 ```
-
-## License
-This project is available under the MIT License. Contributions and modifications are permitted.
