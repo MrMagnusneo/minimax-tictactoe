@@ -98,16 +98,5 @@ Current board:
 Computer wins!
 ```
 
-## Limitations
-- Console-based interface (no GUI)
-- No difficulty levels (AI always plays optimally)
-- No game history tracking
-
-## Possible Enhancements
-1. Graphical interface implementation
-2. Move history display
-3. Adjustable AI difficulty levels
-4. Statistical performance tracking
-
 ## License
 This project is available under the MIT License. Contributions and modifications are permitted.
