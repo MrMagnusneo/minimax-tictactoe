@@ -14,10 +14,10 @@ This Python implementation of Tic-Tac-Toe features an unbeatable AI opponent usi
 - Python 3.x
 
 ## Installation & Execution
-1. Save the code to a file named `tic_tac_toe.py`
+1. Save a file named `tttui.py`
 2. Run from the command line:
 ```bash
-python tic_tac_toe.py
+python tttui.py
 ```
 
 ## Game Instructions
