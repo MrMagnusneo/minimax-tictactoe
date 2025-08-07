@@ -64,10 +64,12 @@ def bot_move():
         board[first_move_row][first_move_col] = bot_team
         moves += 1
         return
-    if moves == 1 and any(board[i][j] == player_team for i in [0, 2] for j in [0, 2]):
+
+    if moves == 1 and board[1][1] == 0 and any(board[i][j] == player_team for i in range(3) for j in range(3)):
         board[1][1] = bot_team
         moves += 1
         return
+
     if moves == 2 and board[1][1] == player_team:
         board[abs(first_move_row - 2)][abs(first_move_col - 2)] = bot_team
         moves += 1
