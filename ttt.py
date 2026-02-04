@@ -28,11 +28,11 @@ def check_win(board, team):
 
 
 def minimax(minimax_board, is_maximizing):
-    result = check_win(minimax_board, bot_team if is_maximizing else player_team)
-
-    if result is True:
-        return (float('inf') if is_maximizing else float('-inf'))
-    elif result is None:
+    if check_win(minimax_board, bot_team) is True:
+        return float('inf')
+    if check_win(minimax_board, player_team) is True:
+        return float('-inf')
+    if all(cell != 0 for row in minimax_board for cell in row):
         return 0
 
     if is_maximizing:
@@ -59,39 +59,6 @@ def minimax(minimax_board, is_maximizing):
 
 def bot_move():
     global moves
-
-    if moves == 0:
-        board[first_move_row][first_move_col] = bot_team
-        moves += 1
-        return
-    if moves == 1 and board[1][1] == 0 and any(board[i][j] == player_team for i in range(3) for j in range(3)):
-        board[1][1] = bot_team
-        moves += 1
-        return
-    if moves == 2 and board[1][1] == player_team:
-        board[abs(first_move_row - 2)][abs(first_move_col - 2)] = bot_team
-        moves += 1
-        return
-
-    for row in range(3):
-        for col in range(3):
-            if board[row][col] == 0:
-                board[row][col] = bot_team
-                if check_win(board, bot_team):
-                    moves += 1
-                    return
-                board[row][col] = 0
-
-    for row in range(3):
-        for col in range(3):
-            if board[row][col] == 0:
-                board[row][col] = player_team
-                if check_win(board, player_team):
-                    board[row][col] = bot_team
-                    moves += 1
-                    return
-                board[row][col] = 0
-
     best_score = float('-inf')
     best_move = (-1, -1)
 
