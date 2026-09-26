@@ -1,14 +1,9 @@
-from random import randrange
-
-
 class TicTacToeGame:
     def __init__(self):
         self.board = [[0, 0, 0] for _ in range(3)]
         self.bot_team = None
         self.player_team = None
         self.moves = 0
-        self.first_move_row = randrange(0, 3, 2)
-        self.first_move_col = randrange(0, 3, 2)
 
     def set_bot_team(self, bot_team):
         if bot_team not in (1, 2):
