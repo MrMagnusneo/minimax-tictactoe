@@ -1,8 +1,4 @@
-from urandom import randrange
-
 while True:
-    first_move_row = randrange(0, 3, 2)
-    first_move_col = randrange(0, 3, 2)
     board = [[0, 0, 0] for _ in range(3)]
     bot_team = int(input('Input computer team (1 -> X, 2 -> O): '))
     player_team = 3 - bot_team
